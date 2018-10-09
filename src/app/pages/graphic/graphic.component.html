@@ -1,3 +1,35 @@
-<p>
-  graphic works!
-</p>
+<div class="row">
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-graphic-donut [chartLabels]="graficos.grafico1.labels" [chartData]="graficos.grafico1.data" [title]="graficos.grafico1.leyenda"></app-graphic-donut>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-graphic-donut [chartLabels]="graficos.grafico2.labels" [chartData]="graficos.grafico2.data" [title]="graficos.grafico2.leyenda"></app-graphic-donut>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-graphic-donut [chartLabels]="graficos.grafico3.labels" [chartData]="graficos.grafico3.data" [title]="graficos.grafico3.leyenda"></app-graphic-donut>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-graphic-donut [chartLabels]="graficos.grafico4.labels" [chartData]="graficos.grafico4.data" [title]="graficos.grafico4.leyenda"></app-graphic-donut>
+      </div>
+    </div>
+  </div>
+
+</div>
