@@ -15,6 +15,8 @@ import { PagesComponent } from '../pages/pages.component';
 import { IncrementorComponent } from '../components/incrementor/incrementor.component';
 import { GraphicDonutComponent } from '../components/graphic-donut/graphic-donut.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         PagesComponent,
         IncrementorComponent,
         GraphicDonutComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromisesComponent,
+        RxjsComponent
     ],
     exports:[
         DashboardComponent,
