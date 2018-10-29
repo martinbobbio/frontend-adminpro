@@ -1,6 +1,7 @@
+//Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Routes
 import { APP_ROUTES } from './app.routes';
@@ -24,6 +25,7 @@ import { RegisterComponent } from './auth/register.component';
   imports: [
     BrowserModule,
     PagesModule,
+    ReactiveFormsModule,
     FormsModule,
     ServiceModule,
     APP_ROUTES

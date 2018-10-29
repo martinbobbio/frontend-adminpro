@@ -1,3 +1,12 @@
 #themecolors a{
     cursor:pointer;
 }
+.c-secondary{
+    color: #06d79c !important;
+}
+.c-white{
+    color:white !important;
+}
+.pointer{
+    cursor:pointer;
+}
