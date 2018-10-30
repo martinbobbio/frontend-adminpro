@@ -7,11 +7,13 @@ import { NopagefoundComponent } from '../shared/nopagefound/nopagefound.componen
 import { HeaderComponent } from '../shared/header/header.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { BreadcumbsComponent } from '../shared/breadcumbs/breadcumbs.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
     imports:[
         RouterModule,
-        CommonModule
+        CommonModule,
+        PipesModule
     ],
     declarations:[
         NopagefoundComponent,

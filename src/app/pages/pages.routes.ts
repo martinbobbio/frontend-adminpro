@@ -7,14 +7,16 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuard } from '../guards/login.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 const pagesRoutes:Routes = [
     { path: '', component:PagesComponent, canActivate:[ LoginGuard ], children: [
         { path: 'dashboard', component:DashboardComponent, data: { title: 'Dashboard' } },
-        { path: 'progress', component:ProgressComponent, data: { title: 'Progreso' } },
-        { path: 'graphic', component:GraphicComponent, data: { title: 'Gráficas' } },
-        { path: 'settings', component:AccountSettingsComponent, data: { title: 'Ajustes' } },
-        { path: 'promises', component:PromisesComponent, data: { title: 'Promesas' } },
+        { path: 'progress', component:ProgressComponent, data: { title: 'Progress' } },
+        { path: 'graphic', component:GraphicComponent, data: { title: 'Graphics' } },
+        { path: 'profile', component:ProfileComponent, data: { title: 'Profile ' } },
+        { path: 'settings', component:AccountSettingsComponent, data: { title: 'Settings' } },
+        { path: 'promises', component:PromisesComponent, data: { title: 'promises' } },
         { path: 'rxjs', component:RxjsComponent, data: { title: 'RxJs' } },
         { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ] },
