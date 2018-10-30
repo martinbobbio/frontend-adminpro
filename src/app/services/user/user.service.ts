@@ -89,8 +89,11 @@ export class UserService {
     let url = `${environment.backend}/user/${user._id}?token=${this.token}`;
 
     return this.http.put(url, user).map((response: any) => {
+      if(user._id === this.user._id){
+        this.saveStorage(response.user._id, this.token, response.user);
+      }
       swal("User update", user.name, "success");
-      this.saveStorage(response.user._id, this.token, response.user);
+      
       return true;
     });
   }
@@ -98,13 +101,31 @@ export class UserService {
   updateImage(file: File, id: string) {
     this._uploadFileService
       .uploadFile(file, "user", id)
-      .then((response:any) => {
+      .then((response: any) => {
         this.user.img = response.user.img;
-        swal('Image uploaded', this.user.name, 'success');
+        swal("Image uploaded", this.user.name, "success");
         this.saveStorage(id, this.token, this.user);
       })
       .catch(err => {
         console.error(err);
       });
+  }
+
+  loadUsers(since: number = 0) {
+    let url = `${environment.backend}/user/?since=${since}`;
+    return this.http.get(url);
+  }
+
+  searchUsers(term: string) {
+    let url = `${environment.backend}/search/collection/users/${term}`;
+    return this.http.get(url).map((response:any) => response.users);
+  }
+
+  deleteUser(id:string){
+    let url = `${environment.backend}/user/${id}?token=${this.token}`;
+    return this.http.delete(url).map(response => {
+      swal('User deleted','the user has been deleted correctly','success');
+      return true;
+    })
   }
 }

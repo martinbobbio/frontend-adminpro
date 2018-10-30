@@ -15,11 +15,13 @@ import { ProgressComponent } from '../pages/progress/progress.component';
 import { GraphicComponent } from '../pages/graphic/graphic.component';
 import { PagesComponent } from '../pages/pages.component';
 import { IncrementorComponent } from '../components/incrementor/incrementor.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { GraphicDonutComponent } from '../components/graphic-donut/graphic-donut.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { ProfileComponent } from './profile/profile.component';
         PromisesComponent,
         RxjsComponent,
         ProfileComponent,
+        UsersComponent,
+        ModalUploadComponent,
     ],
     exports:[
         DashboardComponent,
