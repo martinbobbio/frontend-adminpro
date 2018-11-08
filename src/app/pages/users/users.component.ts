@@ -12,9 +12,9 @@ declare var swal: any;
 })
 export class UsersComponent implements OnInit {
   users: User[] = [];
-  since: number = 0;
   totalUsers: number = 0;
   loading: boolean = true;
+  since: number = 0;
 
   constructor(public _userService: UserService, public _modalUploadService:ModalUploadService) {}
 
@@ -32,17 +32,6 @@ export class UsersComponent implements OnInit {
       this.users = response.users;
       this.loading = false;
     });
-  }
-
-  changeSince(sinceAux: number) {
-    let since = this.since + sinceAux;
-
-    if (since >= this.totalUsers) return;
-    if (since < 0) return;
-
-    this.since += sinceAux;
-
-    this.loadUsers();
   }
 
   searchUser(term: string) {
@@ -86,5 +75,16 @@ export class UsersComponent implements OnInit {
 
   showModal(id:string){
     this._modalUploadService.showModal('user',id);
+  }
+
+  changeSince(sinceAux: number) {
+    let since = this.since + sinceAux;
+
+    if (since >= this.totalUsers) return;
+    if (since < 0) return;
+
+    this.since += sinceAux;
+
+    this.loadUsers();
   }
 }

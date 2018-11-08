@@ -1,0 +1,74 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <input #term (keyup)="searchDoctor(term.value)" type="text" class="form-control" placeholder="Search doctor"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading" class="row animated fadeIn">
+    <div class="col-sm-12">
+      <div class="alert alert-warning text-center">
+        <strong>Loading</strong>
+        <br>
+        <i class="fa fa-refresh fa-spin fa-2x "></i>
+        <br>
+        <span>Wait, please</span>
+      </div>
+    </div>
+  </div>
+  
+<div *ngIf="!loading" class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-9">
+            <h3 class="card-title">Doctors (<small>{{ totalDoctors }}</small>)</h3>
+          </div>
+          <div class="col-3">
+            <button [routerLink]="['/doctor','new']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+              <i class="fa fa-plus"></i> Create doctor
+            </button>
+          </div>
+        </div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Doctor</th>
+                <th>Hospital</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doctor of doctors">
+                <th>
+                  <img (click)="updateImage(doctor)" [src]="doctor.img | image: 'doctor'" class="w-50px pointer"/>
+                </th>
+                <th>
+                  {{doctor.name}}
+                </th>
+                <th>
+                  {{doctor.hospital.name}}
+                </th>
+                <th>
+                  <button [routerLink]="['/doctor', doctor._id]" class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <a (click)="deleteDoctor(doctor)" class="btn btn-danger">
+                    <i class="fa fa-trash-o c-white"></i>
+                  </a>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <button (click)="changeSince(-5)" class="btn btn-secondary">Previous</button>
+          <button (click)="changeSince(5)" class="btn btn-secondary">Next</button>
+        </div>
+    </div>
+  </div>
+</div>
+  
