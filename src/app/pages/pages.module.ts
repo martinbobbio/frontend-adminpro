@@ -12,7 +12,6 @@ import { PAGES_ROUTES }  from '../pages/pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { GraphicComponent } from './graphic/graphic.component';
-import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
@@ -29,7 +28,6 @@ import { SearchComponent } from './search/search.component';
         DashboardComponent,
         ProgressComponent,
         GraphicComponent,
-        PagesComponent,
         AccountSettingsComponent,
         PromisesComponent,
         RxjsComponent,

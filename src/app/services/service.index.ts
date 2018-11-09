@@ -7,3 +7,4 @@ export { UserService } from './user/user.service';
 export { UploadFileService } from './upload-file/upload-file.service';
 export { LoginGuard } from './../guards/login.guard';
 export { AdminGuard } from '../guards/admin.guard';
+export { VerifyTokenGuard } from '../guards/verify-token.guard';

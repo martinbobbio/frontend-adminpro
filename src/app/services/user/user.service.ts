@@ -23,6 +23,19 @@ export class UserService {
     this.loadStorage();
   }
 
+  refreshToken(){
+    let url = `${environment.backend}/login/newtoken?token=${this.token}`;
+    return this.http.get(url).map((response:any) => {
+      this.token = response.token;
+      localStorage.setItem("token", this.token);
+      return true;
+    }).catch(err =>{
+      this.router.navigate(['/login']);
+      swal("Token not refresh", "Can't update token", "error")
+      return Observable.throw(err);
+    });
+  }
+
   saveStorage(id: string, token: string, user: User, menu:any) {
     localStorage.setItem("id", id);
     localStorage.setItem("token", token);
