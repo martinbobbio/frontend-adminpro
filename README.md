@@ -19,9 +19,24 @@ Administrador completo con entidades de usuarios, medicos, doctores. Auth normal
 ### Login
 
 ![Image of pagina](src/assets/images/screen-adminpro1.png)
+
+### Doctor
+
 ![Image of pagina](src/assets/images/screen-adminpro2.png)
-![Image of pagina](src/assets/images/screen-adminpro3.png)
+
+### Usuarios
+
 ![Image of pagina](src/assets/images/screen-adminpro4.png)
+
+### Login
+
 ![Image of pagina](src/assets/images/screen-adminpro5.png)
+
+### Buscador
+
+![Image of pagina](src/assets/images/screen-adminpro3.png)
+
+### Login
+
 ![Image of pagina](src/assets/images/screen-adminpro6.png)
 
