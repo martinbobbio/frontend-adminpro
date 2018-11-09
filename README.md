@@ -1,27 +1,45 @@
-# AdminPro
+<h1 align="center">
+  <br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" width="200">
+  <br>
+  Adminpro - Frontend 
+  <br>
+</h1>
+<h4 align="center"><a target="_blank" href="https://github.com/martinbobbio/backend-adminpro">Adminpro - Backend</a></h4>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.6.
 
-## Development server
+# Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Curso de desarrollo MEAN STACK de udemy. Resotorio de admin completo hecho en angular.
+Administrador completo con entidades de usuarios, medicos, doctores. Auth normal y con Google.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Capturas
 
-## Build
+### Login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+![Image of pagina](src/assets/images/screen-adminpro6.png)
 
-## Running unit tests
+### Usuarios
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Image of pagina](src/assets/images/screen-adminpro4.png)
 
-## Running end-to-end tests
+### Hospitales
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Image of pagina](src/assets/images/screen-adminpro1.png)
 
-## Further help
+### Doctor
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Image of pagina](src/assets/images/screen-adminpro2.png)
+
+
+### Gráficos
+
+![Image of pagina](src/assets/images/screen-adminpro5.png)
+
+### Buscador
+
+![Image of pagina](src/assets/images/screen-adminpro3.png)
+
+
+
