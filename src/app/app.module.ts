@@ -1,14 +1,12 @@
-//Angular
+//Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagesModule } from './pages/pages.module';
+import { ServiceModule } from './services/service.module';
 
 //Routes
 import { APP_ROUTES } from './app.routes';
-
-//Modules
-import { PagesModule } from './pages/pages.module';
-import { ServiceModule } from './services/service.module';
 
 //Components
 import { AppComponent } from './app.component';

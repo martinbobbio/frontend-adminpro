@@ -2,16 +2,18 @@ import { Injectable } from "@angular/core";
 import { User } from "../../models/user.model";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
-import "rxjs/add/operator/map";
-
-import swal from "sweetalert";
 import { Router } from "@angular/router";
 import { UploadFileService } from "../upload-file/upload-file.service";
+import swal from "sweetalert";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class UserService {
   user: User;
   token: string;
+  menu:any = [];
 
   constructor(
     public http: HttpClient,
@@ -21,22 +23,26 @@ export class UserService {
     this.loadStorage();
   }
 
-  saveStorage(id: string, token: string, user: User) {
+  saveStorage(id: string, token: string, user: User, menu:any) {
     localStorage.setItem("id", id);
     localStorage.setItem("token", token);
     localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("menu", JSON.stringify(menu));
 
     this.user = user;
     this.token = token;
+    this.menu = menu;
   }
 
   loadStorage() {
     if (localStorage.getItem("token")) {
       this.token = localStorage.getItem("token");
       this.user = JSON.parse(localStorage.getItem("user"));
+      this.menu = JSON.parse(localStorage.getItem("menu"));
     } else {
       this.token = "";
       this.user = null;
+      this.menu = [];
     }
   }
 
@@ -44,7 +50,7 @@ export class UserService {
     let url = `${environment.backend}/login/google`;
 
     return this.http.post(url, { token }).map((response: any) => {
-      this.saveStorage(response.id, response.token, response.user);
+      this.saveStorage(response.id, response.token, response.user, response.menu);
       return true;
     });
   }
@@ -56,9 +62,12 @@ export class UserService {
     let url = `${environment.backend}/login`;
 
     return this.http.post(url, user).map((response: any) => {
-      this.saveStorage(response.id, response.token, response.user);
+      this.saveStorage(response.id, response.token, response.user, response.menu);
 
       return true;
+    }).catch(err =>{
+      swal("Error - Login", err.error.message, "error")
+      return Observable.throw(err);
     });
   }
 
@@ -68,6 +77,9 @@ export class UserService {
     return this.http.post(url, user).map((response: any) => {
       swal("User created", user.email, "success");
       return response.user;
+    }).catch(err =>{
+      swal(err.error.message, err.error.errors.message,"error")
+      return Observable.throw(err);
     });
   }
 
@@ -78,9 +90,11 @@ export class UserService {
   logout() {
     this.user = null;
     this.token = "";
+    this.menu = [];
 
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    localStorage.removeItem("menu");
 
     this.router.navigate(["/login"]);
   }
@@ -90,11 +104,14 @@ export class UserService {
 
     return this.http.put(url, user).map((response: any) => {
       if(user._id === this.user._id){
-        this.saveStorage(response.user._id, this.token, response.user);
+        this.saveStorage(response.user._id, this.token, response.user, this.menu);
       }
       swal("User update", user.name, "success");
       
       return true;
+    }).catch(err =>{
+      swal(err.error.message, err.error.errors.message,"error")
+      return Observable.throw(err);
     });
   }
 
@@ -104,7 +121,7 @@ export class UserService {
       .then((response: any) => {
         this.user.img = response.user.img;
         swal("Image uploaded", this.user.name, "success");
-        this.saveStorage(id, this.token, this.user);
+        this.saveStorage(id, this.token, this.user, this.menu);
       })
       .catch(err => {
         console.error(err);

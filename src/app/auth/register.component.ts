@@ -3,8 +3,9 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { UserService } from "../services/service.index";
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
-
 import swal from 'sweetalert'; 
+import { Title } from "@angular/platform-browser";
+import { environment } from "../../environments/environment";
 declare function initPlugins();
 
 @Component({
@@ -15,8 +16,10 @@ declare function initPlugins();
 export class RegisterComponent implements OnInit {
   form: FormGroup;
 
-  constructor(public _userService:UserService, public router:Router) {
+  constructor(public _userService:UserService, public router:Router, public titlePage:Title) {
     initPlugins();
+
+    this.titlePage.setTitle(`${environment.name} - Register`);
 
     this.form = new FormGroup(
       {

@@ -4,7 +4,7 @@ import { NgForm } from "@angular/forms";
 import { UserService } from "../services/service.index";
 import { User } from "../models/user.model";
 import { environment } from "../../environments/environment.prod";
-import { element } from "protractor";
+import { Title } from "@angular/platform-browser";
 
 declare function initPlugins();
 declare const gapi: any;
@@ -19,11 +19,13 @@ export class LoginComponent implements OnInit {
   remember: boolean = false;
   auth2: any;
 
-  constructor(public router: Router, public _userService: UserService) {}
+  constructor(public router: Router, public _userService: UserService, public titlePage:Title) {}
 
   ngOnInit() {
     initPlugins();
     this.googleInit();
+
+    this.titlePage.setTitle(`${environment.name} - Login`);
 
     this.email = localStorage.getItem("email") || "";
     if (this.email.length > 1) {
