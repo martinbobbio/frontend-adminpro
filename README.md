@@ -2,7 +2,7 @@
   <br>
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" width="200">
   <br>
-  Adminpro
+  Adminpro - Frontend
   <br>
 </h1>
 <h4 align="center"><a target="_blank" href="www.google.com">Adminpro - Backend</a></h4>
