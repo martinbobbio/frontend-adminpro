@@ -8,15 +8,15 @@
 <h4 align="center"><a target="_blank" href="https://github.com/martinbobbio/backend-adminpro">Adminpro - Backend</a></h4>
 
 
-## Descripción
+# Descripción
 
 Curso de desarrollo MEAN STACK de udemy. Resotorio de admin completo hecho en angular.
 Administrador completo con entidades de usuarios, medicos, doctores. Auth normal y con Google.
 
 
-## Capturas
+# Capturas
 
-# Login
+## Login
 
 ![Image of pagina](src/assets/images/screen-adminpro1.png)
 ![Image of pagina](src/assets/images/screen-adminpro2.png)
