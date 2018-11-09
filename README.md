@@ -16,7 +16,7 @@ Administrador completo con entidades de usuarios, medicos, doctores. Auth normal
 
 # Capturas
 
-## Login
+### Login
 
 ![Image of pagina](src/assets/images/screen-adminpro1.png)
 ![Image of pagina](src/assets/images/screen-adminpro2.png)
