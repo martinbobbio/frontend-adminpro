@@ -2,7 +2,7 @@
   <br>
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" width="200">
   <br>
-  WeatherApp
+  Adminpro
   <br>
 </h1>
 
@@ -11,7 +11,8 @@
 
 ## Descripción
 
-Curso de desarrollo MEAN STACK de udemy. Resotorio de admin completo hecho en angular
+Curso de desarrollo MEAN STACK de udemy. Resotorio de admin completo hecho en angular.
+Administrador completo con entidades de usuarios, medicos, doctores. Auth normal y con Google.
 
 
 ## Capturas
