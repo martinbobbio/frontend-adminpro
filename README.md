@@ -13,6 +13,7 @@
 Curso de desarrollo MEAN STACK de udemy. Resotorio de admin completo hecho en angular.
 Administrador completo con entidades de usuarios, medicos, doctores. Auth normal y con Google.
 
+Tecnologias usadas: Angular
 
 # Capturas
 
