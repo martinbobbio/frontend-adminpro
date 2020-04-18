@@ -132,7 +132,7 @@ export class UserService {
     this._uploadFileService
       .uploadFile(file, "user", id)
       .then((response: any) => {
-        this.user.img = response.user.img;
+        this.user.img = response.Entity.img;
         swal("Image uploaded", this.user.name, "success");
         this.saveStorage(id, this.token, this.user, this.menu);
       })
