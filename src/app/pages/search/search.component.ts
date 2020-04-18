@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../../environments/environment';
 import { User } from '../../models/user.model';
 import { Hospital } from '../../models/hospital.model';
 import { Doctor } from '../../models/doctor.model';
